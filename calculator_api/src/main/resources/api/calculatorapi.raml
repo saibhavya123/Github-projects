@@ -1,0 +1,51 @@
+#%RAML 1.0
+title: calculatorAPI
+version: v12
+description: "This API is used to perform Math functions"
+mediaType: 
+- application/json
+traits:
+  query: !include /traits/trait.raml
+/Addition:
+  get:
+    is: [query]
+    responses:
+      200:
+            body:
+                        example: !include examples/response/addition-response.json
+
+/sub:
+  put:
+    queryParameters:
+      number1:
+        required: true
+        type: integer
+      number2:
+        required: false
+        type: number
+    responses:
+      201:
+            body:
+                        example: !include /examples/response/sub-response.json
+/Multi:
+  post:
+    is: [query]
+    responses:
+            200:
+                  body:
+                          example: !include /examples/response/multi-response.json
+                 
+                
+                                                                                          
+
+
+                                                                                                                                                                            
+
+
+          
+                                                                
+            
+          
+
+              
+          
